@@ -1,0 +1,75 @@
+# Подготовка к выполнению задачи. По совету преподавателя создан каталог lesson_2. В нем и будем работать.
+ubuntu@ip-172-31-7-229:~$ mkdir lesson_2
+ubuntu@ip-172-31-7-229:~$ ls
+lesson_2
+ubuntu@ip-172-31-7-229:~$ cd lesson_2/
+
+# Создать каталоги first и second в домашней директории
+ubuntu@ip-172-31-7-229:~/lesson_2$ mkdir first
+ubuntu@ip-172-31-7-229:~/lesson_2$ mkdir second
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first  second
+
+# а в них — текстовые файлы first.py и second.py, содержащие программы, выводящие на экран числа 1 и 2 соответственно.
+ubuntu@ip-172-31-7-229:~/lesson_2$ cd first
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ echo 'print(1)' > first.py
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ ls
+first.py
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ cat first.py
+print(1)
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ cd /home/ubuntu/lesson_2/second/
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ echo 'print(2)' > second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ ls
+second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ cat second.py
+print(2)
+
+# Переместите файл second.py в папку first.
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ mv second.py /home/ubuntu/lesson_2/first/second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ ls
+ubuntu@ip-172-31-7-229:~/lesson_2/second$ cd ..
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first  second
+ubuntu@ip-172-31-7-229:~/lesson_2$ cd first/
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ ls
+first.py  second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ cat second.py
+print(2)
+
+# Удалите папку second.
+ubuntu@ip-172-31-7-229:~/lesson_2/first$ cd ..
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first  second
+ubuntu@ip-172-31-7-229:~/lesson_2$ rm -r second/
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first
+
+# Переименуйте папку first в first_second.
+ubuntu@ip-172-31-7-229:~/lesson_2$ mv first/ first_second
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first_second
+ubuntu@ip-172-31-7-229:~/lesson_2$ cd first_second/
+ubuntu@ip-172-31-7-229:~/lesson_2/first_second$ ls
+first.py  second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/first_second$ cat first.py
+print(1)
+ubuntu@ip-172-31-7-229:~/lesson_2/first_second$ cat second.py
+print(2)
+
+# Удалите папку first_second вместе с содержимым.
+ubuntu@ip-172-31-7-229:~/lesson_2/first_second$ ls
+first.py  second.py
+ubuntu@ip-172-31-7-229:~/lesson_2/first_second$ cd ..
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+first_second
+ubuntu@ip-172-31-7-229:~/lesson_2$ rm -r first_second/
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls
+ubuntu@ip-172-31-7-229:~/lesson_2$ ls -a
+.  ..
+
+# Финальное удаление каталога lesson_2. И приведение каталога /home/ubuntu/ к исходному состоянию
+ubuntu@ip-172-31-7-229:~/lesson_2$ cd ..
+ubuntu@ip-172-31-7-229:~$ rm -r lesson_2/
+ubuntu@ip-172-31-7-229:~$ ls
+ubuntu@ip-172-31-7-229:~$ ls -a
+.  ..  .bash_logout  .bashrc  .cache  .profile  .ssh
